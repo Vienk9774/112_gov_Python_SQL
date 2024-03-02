@@ -54,3 +54,13 @@ WHERE major IN('英語','生物','歷史')
 SELECT *
 FROM student 
 WHERE not name = '小黃'
+
+/*[指令]WHERE XX like：顯示第一字是 小X 學生的，%為任意文字 */
+SELECT *
+FROM student 
+WHERE name LIKE '小%'
+
+/*[指令]WHERE XX like：顯示 X黃X 學生的，%為任意文字 */
+SELECT *
+FROM student 
+WHERE name LIKE '%黃%'
