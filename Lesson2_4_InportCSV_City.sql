@@ -1,0 +1,6 @@
+CREATE TABLE IF NOT EXISTS city(
+	id SERiAL PRIMARY KEY,
+	name VARCHAR(100),
+	population INT,	
+	PRIMARY KEY(id)
+);
