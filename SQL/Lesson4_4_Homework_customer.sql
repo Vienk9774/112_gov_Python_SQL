@@ -31,7 +31,7 @@ WHERE first_name LIKE 'Ann%'
 SELECT *
 FROM customer 
 WHERE first_name LIKE 'A%' 
-AND SUBSTRING(FROM 3 FOR 3)
+AND LENGTH(first_name) BETWEEN 3 AND 5;
 
 /*07小題：取出first_name,前3字為Bra,但last_name不是Motley */
 SELECT *
