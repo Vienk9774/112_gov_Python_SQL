@@ -19,7 +19,7 @@ CREATE TABLE IF NOT EXISTS 聯絡人(
 	PRIMARY KEY (聯絡人id),
 	FOREIGN KEY(客戶id) REFERENCES 客戶(客戶_id)
 	/*↑上述無特別說明，預設PERENTTABLE的ID是不能刪除的*/
-	ON DELETE SET NULL
+	ON DELETE CASCADE
 	/*↑說明刪除欄位時標註為NULL*/
 );
 

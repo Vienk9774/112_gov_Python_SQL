@@ -19,7 +19,7 @@ CREATE TABLE IF NOT EXISTS 聯絡人(
 	PRIMARY KEY (聯絡人id),
 	FOREIGN KEY(客戶id) REFERENCES 客戶(客戶_id)
 	/*↑上述無特別說明，預設PERENTTABLE的ID是不能刪除的*/
-	ON DELETE SET NULL
+	ON DELETE CASCADE
 	/*↑說明刪除欄位時標註為NULL*/
 );
 
@@ -37,3 +37,12 @@ WHERE 客戶_id = 1;
 
 SELECT * FROM 客戶;
 SELECT * FROM 聯絡人;
+
+/*以LEFT JOIN 取客戶與聯絡人名稱相同資料*/
+SELECT 聯絡人id,客戶名稱,聯絡人姓名,電話,Email
+FROM 聯絡人 LEFT JOIN 客戶 ON 聯絡人.客戶id = 客戶.客戶_id
+
+/*以LEFT JOIN 取同客戶名稱中相同資料*/
+SELECT 聯絡人id,客戶名稱,聯絡人姓名,電話,Email
+FROM 聯絡人 LEFT JOIN 客戶 ON 聯絡人.客戶id = 客戶.客戶_id
+WHERE 客戶名稱='遠傳電信'
